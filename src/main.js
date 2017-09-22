@@ -8,6 +8,11 @@ const elementsTarget = [
   '.comment-content p',
 ]
 
+const cssRtlRules = {
+  'direction': 'rtl',
+  'text-align': 'right'
+}
+
 function isElContainHebrew(el) {
   return el.search(detect.hebrew) >= 0  
 }
@@ -15,10 +20,8 @@ function isElContainHebrew(el) {
 $(function() {
   
   $.each(elementsTarget, function(key, el) {
-    console.log('key', key, 'el', el)
     if(isElContainHebrew($(el).text())) {
-      $(el).css('direction', 'rtl');
-      $(el).css('text-align', 'right');
+      $(el).css(cssRtlRules);
     }
   })
 
