@@ -2,15 +2,15 @@ const detect = {
   hebrew: '/[\u0590-\u05FF]/'
 }
 
-function isElContainHebrew(el) {
-  return el.search(detect.hebrew) >= 0  
-}
-
 const elementsTarget = [
   'table.issues-list .issue-list--title',
   '.issue-description p',
   '.comment-content p',
 ]
+
+function isElContainHebrew(el) {
+  return el.search(detect.hebrew) >= 0  
+}
 
 $(function() {
   
