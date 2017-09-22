@@ -6,14 +6,14 @@ function isElContainHebrew(el) {
   return el.search(detect.hebrew) >= 0  
 }
 
+const elementsTarget = [
+  'table.issues-list .issue-list--title',
+  '.issue-description p',
+  '.comment-content p',
+]
+
 $(function() {
   
-  const elementsTarget = [
-    'table.issues-list .issue-list--title',
-    '.issue-description p',
-    '.comment-content p',
-  ]
-
   $.each(elementsTarget, function(key, el) {
     console.log('key', key, 'el', el)
     if(isElContainHebrew($(el).text())) {
