@@ -1,9 +1,9 @@
 const detect = {
-  'hebrew': '/[\u0590-\u05FF]/'
+  hebrew: '/[\u0590-\u05FF]/'
 }
 
 function isElContainHebrew(el) {
-  return el.search(/[\u0590-\u05FF]/) >= 0  
+  return el.search(detect.hebrew) >= 0  
 }
 
 $(function() {
